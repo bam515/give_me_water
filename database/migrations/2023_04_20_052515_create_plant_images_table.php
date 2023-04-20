@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminsTable extends Migration
+class CreatePlantImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->id('admin_id');
-            $table->string('login_id', 45);
-            $table->string('password', 255);
+        Schema::create('plant_images', function (Blueprint $table) {
+            $table->id('image_id');
+            $table->bigInteger('plant_id');
+            $table->string('file_path', 255);
+            $table->string('file_name', 255);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('plant_images');
     }
 }
