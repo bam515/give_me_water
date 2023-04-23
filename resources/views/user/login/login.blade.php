@@ -13,39 +13,33 @@
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <input type="text" id="login_id" name="login_id" class="form-control form-control-lg" />
-                            <label class="form-label" for="login_id">ID</label>
+                            <label class="form-label" for="login_id">아이디</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-4">
                             <input type="password" id="password" name="password" class="form-control form-control-lg" />
-                            <label class="form-label" for="password">Password</label>
+                            <label class="form-label" for="password">비밀번호</label>
                         </div>
 
                         <div class="d-flex justify-content-around align-items-center mb-4">
                             <!-- Checkbox -->
-                            <div class="form-check">
+                            {{--<div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                                <label class="form-check-label" for="form1Example3"> Remember me </label>
-                            </div>
-                            <a href="#!">Forgot password?</a>
+                                <label class="form-check-label" for="form1Example3"> 로그인 유지 </label>
+                            </div>--}}
+                            <a href="#!">비밀번호를 잊어버리셨나요?</a>
                         </div>
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">로그인</button>
 
                         <div class="divider d-flex align-items-center my-4">
                             <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
                         </div>
 
-                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
-                           role="button">
-                            <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
-                        </a>
-                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
-                           role="button">
-                            <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
-
+                        <button type="button" class="btn btn-primary btn-lg btn-block"
+                                onclick="location.href='{{ route('join.index') }}'">회원가입</button>
                     </form>
                 </div>
             </div>
