@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('user_gender', 45)->nullable();
             $table->string('kakao_id', 45)->nullable();
             $table->string('google_id', 45)->nullable();
+            $table->integer('status')->default(0)->nullable();
             $table->timestamps();
         });
     }
