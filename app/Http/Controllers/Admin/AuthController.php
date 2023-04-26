@@ -12,6 +12,9 @@ class AuthController extends Controller
 {
     // login form
     public function loginForm() {
+        if (Auth::guard('admin')->check()) {
+            return view('admin.dashboard.index');
+        }
         return view('admin.login.index');
     }
 
