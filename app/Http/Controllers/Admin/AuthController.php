@@ -25,7 +25,7 @@ class AuthController extends Controller
         if ($admin !== null) {
             if (Hash::check($password, $admin->password)) {
                 Auth::guard('admin')->login($admin);
-                return redirect()->intended('/admin/member');
+                return redirect()->intended('/admin/dashboard');
             } else {
                 return back()->withErrors(['password' => '비밀번호가 일치하지 않습니다.']);
             }
