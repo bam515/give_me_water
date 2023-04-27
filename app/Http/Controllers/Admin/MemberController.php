@@ -28,11 +28,12 @@ class MemberController extends Controller
 
         $members->latest('user_id');
 
-        if ($request->filled('post')) {
-            $members = $members->paginate($request->post);
-        } else {
-            $members = $members->paginate(10);
-        }
+        $members = $members->get();
+//        if ($request->filled('post')) {
+//            $members = $members->paginate($request->post);
+//        } else {
+//            $members = $members->paginate(10);
+//        }
 
         return view('admin.member.index', compact('members'));
     }
