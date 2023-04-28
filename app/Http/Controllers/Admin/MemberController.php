@@ -28,12 +28,11 @@ class MemberController extends Controller
 
         $members->latest('user_id');
 
-        $members = $members->get();
-//        if ($request->filled('post')) {
-//            $members = $members->paginate($request->post);
-//        } else {
-//            $members = $members->paginate(10);
-//        }
+        if ($request->filled('post')) {
+            $members = $members->paginate($request->post);
+        } else {
+            $members = $members->paginate(10);
+        }
 
         return view('admin.member.index', compact('members'));
     }
@@ -48,6 +47,27 @@ class MemberController extends Controller
                 'status' => 1,
                 'updated_at' => now()
             ]);
+            $code = 200;
+            $message = 'success';
+            DB::commit();
+        } catch (\Exception $exception) {
+            $code = 500;
+            $message = $exception->getMessage();
+            DB::rollBack();
+        }
+        return response()->json([
+            'code' => $code,
+            'message' => $message
+        ]);
+    }
+
+    // delete member
+    public function delete(User $user) {
+        DB::beginTransaction();
+
+        try {
+            $user->delete();
+
             $code = 200;
             $message = 'success';
             DB::commit();

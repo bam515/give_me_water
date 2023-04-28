@@ -1,64 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Give me Water
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+## 개요
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+평소에 꼼꼼하지 못하다던가 무엇인가를 잘 까먹는 사람들이 식물을 키우게 된다면, 자신이 키우는 식물들의 물 주는 주기를 저장해두고 식물마다 물 주는 날이 언제인지 주기적으로 확인할 수 있고 더 나아가 식물들을 키우는 사람들끼리 정보를 공유할 수 있는 커뮤니티가 있으면 어떨까 하는 생각해서 시작하게 된 프로젝트입니다.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 사용한 기술
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 백엔드:  PHP, MySQL, Laravel
+- 프론트엔드 : Javascript, jQuery, bootstrap
+- 유틸리티 : Postman
+- 데브옵스 : Git, Github, VirtualBox, PhpStorm, Vagrant
 
-## Learning Laravel
+## 페이지 구조
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### User
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 메인 페이지
+    - 로그인 버튼
+        - 일반 로그인 버튼, SNS(카카오, 구글) 로그인 버튼
+- 로그인 페이지
+    - 아이디, 비밀번호 입력 칸
+    - 로그인 유지 체크박스
+    - 로그인 버튼, 회원 가입 버튼
+    - SNS 로그인 및 회원 가입 버튼
+- 회원가입 페이지
+    - 닉네임, 아이디, 비밀번호, 생년월일, 성별 입력
+- 내 화단 페이지
+    - 리스트업 페이지
+        - 화분 이름, 썸네일 사진
+        - 검색(화분 이름)
+        - 페이지네이션
+    - 상세보기 페이지
+        - 화분 이름, 화분 사진, 정보(물 주기)
+        - 좋아요
+        - 댓글
+        - 수정 버튼
+    - 추가 페이지
+        - 화분 이름, 화분 사진, 정보(물 주기)
+        - 등록 버튼
+    - 수정 페이지
+        - 화분 이름, 화분 사진, 정보(물 주기)
+        - 수정 버튼
+- 모두의 화단 페이지
+    - 리스트업 페이지
+        - 화분 이름, 썸네일 사진
+        - 검색(화분 이름)
+        - 페이지네이션
+    - 상세보기 페이지
+        - 화분 이름, 화분 사진, 정보(물 주기)
+        - 좋아요
+        - 댓글
+- 마이페이지
+    - 비밀번호 수정 페이지
+    - 정보 수정 페이지
+    - 탈퇴하기 버튼
 
-## Laravel Sponsors
+### Admin
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- 회원 관리 페이지
+    - 리스트업 페이지
+        - 닉네임, 아이디, 생년월일, 성별, 가입일시
+        - 차단 버튼, 삭제 버튼
+        - 엑셀 다운로드
+- 화단 관리 페이지
+    - 리스트업 페이지
+        - 화분 이름, 작성자 아이디, 등록일시, 좋아요 수, 댓글 수
+        - 삭제 버튼
+    - 상세보기 페이지
+        - 사진, 이름, 정보(물 주기)
+        - 삭제 버튼
+- 공지사항 관리 페이지
+    - 리스트업 페이지
+        - 번호, 제목, 등록일시, 수정일시
+        - 수정, 삭제 버튼
+        - 제목 클릭시 상세보기
+    - 상세보기 페이지
+        - 제목, 내용, 등록일
+        - 수정, 삭제 버튼
+    - 추가 페이지
+    - 수정 페이지
