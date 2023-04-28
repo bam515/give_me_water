@@ -9,4 +9,7 @@ Route::middleware('admin')->group(function () {
 
     // block member
     Route::put('/block/{user}', [MemberController::class, 'blockMember'])->name('admin.member.block');
+
+    // delete member
+    Route::delete('/{user}', [MemberController::class, 'delete'])->name('admin.member.delete');
 });
