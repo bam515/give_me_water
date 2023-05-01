@@ -32,6 +32,16 @@
                     회원 관리
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                <a class="nav-link collapsed" href="{{ route('admin.plant.index') }}">
+                    <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                    화단 관리
+                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <a class="nav-link collapsed" href="{{ route('admin.notice.index') }}">
+                    <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                    공지사항 관리
+                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
                 {{--<div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                         <a class="nav-link" href="dashboard-1.html">

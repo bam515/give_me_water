@@ -24,17 +24,21 @@
                     <div class="card mb-4">
                         <div class="card-header">회원 관리</div>
                         <div class="card-body">
-                            <form class="datatable-top">
+                            <form class="datatable-top" id="search-form">
                                 <div class="datatable-dropdown">
                                     <label>
-                                        <select class="datatable-selector" name="post">
-                                            <option value="10">10</option>
-                                            <option value="20">20</option>
+                                        <select class="datatable-selector"
+                                                name="post" onchange="document.getElementById('search-form').submit();">
+                                            <option value="10" {{ old('post') === '10' ? 'selected' : '' }}>10</option>
+                                            <option value="20" {{ old('post') === '20' ? 'selected' : '' }}>20</option>
+                                            <option value="50" {{ old('post') === '50' ? 'selected' : '' }}>50</option>
+                                            <option value="100" {{ old('post') === '100' ? 'selected' : '' }}>100</option>
                                         </select>
                                     </label>
                                 </div>
                                 <div class="datatable-search">
-                                    <input type="text" class="datatable-input" name="keyword" placeholder="검색">
+                                    <input type="text" class="datatable-input"
+                                           name="keyword" placeholder="검색" value="{{ old('keyword') }}">
                                 </div>
                             </form>
                             <table class="table">
@@ -81,18 +85,7 @@
                     </div>
                 </div>
             </main>
-            <footer class="footer-admin mt-auto footer-light">
-                <div class="container-xl px-4">
-                    <div class="row">
-                        <div class="col-md-6 small">Copyright &copy; Your Website 2021</div>
-                        <div class="col-md-6 text-md-end small">
-                            <a href="#!">Privacy Policy</a>
-                            &middot;
-                            <a href="#!">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            @include('admin.include.footer')
         </div>
     </div>
 
