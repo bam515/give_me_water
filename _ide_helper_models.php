@@ -158,6 +158,7 @@ namespace App\Models{
  * @property string|null $user_gender
  * @property string|null $kakao_id
  * @property string|null $google_id
+ * @property int|null $status
  * @property string|null $created_at
  * @property string|null $updated_at
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
@@ -174,6 +175,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereLoginId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereNickName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUserBirth($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUserGender($value)

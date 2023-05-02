@@ -12,4 +12,7 @@ Route::middleware('admin')->group(function () {
 
     // delete member
     Route::delete('/{user}', [MemberController::class, 'delete'])->name('admin.member.delete');
+
+    // excel download
+    Route::get('/excel', [MemberController::class, 'excel'])->name('admin.member.excel');
 });
