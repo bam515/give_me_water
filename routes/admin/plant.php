@@ -12,4 +12,7 @@ Route::middleware('admin')->group(function () {
 
     // 삭제
     Route::delete('/{plant}', [PlantController::class, 'delete'])->name('admin.plant.delete');
+
+    // excel download
+    Route::get('/excel', [PlantController::class, 'excel'])->name('admin.plant.excel');
 });

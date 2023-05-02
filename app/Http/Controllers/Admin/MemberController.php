@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MemberController extends Controller
 {
@@ -80,5 +82,10 @@ class MemberController extends Controller
             'code' => $code,
             'message' => $message
         ]);
+    }
+
+    // excel download
+    public function excel() {
+        return Excel::download(new UserExport(), '회원관리_' . date('Y-m-d') . '.xlsx');
     }
 }

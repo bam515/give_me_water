@@ -36,6 +36,8 @@
                                         </select>
                                     </label>
                                 </div>
+                                <button type="button" class="btn btn-green"
+                                        onclick="location.href='{{ route('admin.member.excel') }}'"><i class="fa-regular fa-file-excel"></i>&nbsp;Excel</button>
                                 <div class="datatable-search">
                                     <input type="text" class="datatable-input"
                                            name="keyword" placeholder="검색" value="{{ old('keyword') }}">
@@ -45,7 +47,7 @@
                                 <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>이름</th>
+                                    <th>닉네임</th>
                                     <th>아이디</th>
                                     <th>생년월일</th>
                                     <th>성별</th>

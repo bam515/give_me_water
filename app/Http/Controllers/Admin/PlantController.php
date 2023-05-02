@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\PlantExport;
 use App\Http\Controllers\Controller;
 use App\Models\Plant;
 use App\Models\PlantComment;
 use App\Models\PlantLike;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PlantController extends Controller
 {
@@ -80,5 +82,10 @@ class PlantController extends Controller
             'code' => $code,
             'message' => $message
         ]);
+    }
+
+    // excel download
+    public function excel() {
+        return Excel::download(new PlantExport(), '화단관리_' . date('Y-m-d') . '.xlsx');
     }
 }
