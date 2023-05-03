@@ -1,7 +1,17 @@
 @extends('admin.login.layout')
 @section('content')
+    @php
+        if (isset($_COOKIE['admin_login_id']) && isset($_COOKIE['admin_login_pass'])) {
+            $loginID = $_COOKIE['admin_login_id'];
+            $password = $_COOKIE['admin_login_pass'];
+            $isRemember = 'checked';
+        } else {
+            $loginID = '';
+            $password = '';
+            $isRemember = '';
+        }
+    @endphp
     <div class="container">
-
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
@@ -20,15 +30,19 @@
                                         @csrf
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
+                                                   value="{{ $loginID }}"
                                                    id="login_id" name="login_id" placeholder="Enter ID">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
+                                                   value="{{ $password }}"
                                                    id="password" name="password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <input type="checkbox" class="custom-control-input"
+                                                       {{ $isRemember }} name="remember"
+                                                       id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">Remember
                                                     Me</label>
                                             </div>
@@ -42,10 +56,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 @endsection

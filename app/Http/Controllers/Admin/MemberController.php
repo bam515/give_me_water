@@ -6,14 +6,14 @@ use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
 class MemberController extends Controller
 {
     // member management index
-    public function index(Request $request)
-    {
+    public function index(Request $request) {
         $request->flash();
 
         $members = User::select('*');
@@ -40,8 +40,7 @@ class MemberController extends Controller
     }
 
     // block member
-    public function blockMember(User $user)
-    {
+    public function blockMember(User $user) {
         DB::beginTransaction();
 
         try {
