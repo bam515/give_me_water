@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlantCommentsTable extends Migration
+class CreateNoticeCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePlantCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('plant_comments', function (Blueprint $table) {
+        Schema::create('notice_comments', function (Blueprint $table) {
             $table->id('comment_id');
-            $table->foreignId('plant_id');
+            $table->foreignId('notice_id');
             $table->foreignId('user_id');
             $table->string('comment', 255);
             $table->timestamps();
 
-            $table->foreign('plant_id')->references('plant_id')->on('plants');
+            $table->foreign('notice_id')->references('notice_id')->on('notices');
             $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
@@ -32,6 +32,6 @@ class CreatePlantCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plant_comments');
+        Schema::dropIfExists('notice_comments');
     }
 }

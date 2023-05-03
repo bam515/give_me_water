@@ -15,9 +15,12 @@ class CreatePlantLikesTable extends Migration
     {
         Schema::create('plant_likes', function (Blueprint $table) {
             $table->id('like_id');
-            $table->bigInteger('plant_id');
-            $table->bigInteger('user_id');
+            $table->foreignId('plant_id');
+            $table->foreignId('user_id');
             $table->timestamps();
+
+            $table->foreign('plant_id')->references('plant_id')->on('plants');
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 
