@@ -15,10 +15,12 @@ class CreatePlantImagesTable extends Migration
     {
         Schema::create('plant_images', function (Blueprint $table) {
             $table->id('image_id');
-            $table->bigInteger('plant_id');
+            $table->foreignId('plant_id');
             $table->string('file_path', 255);
             $table->string('file_name', 255);
             $table->timestamps();
+
+            $table->foreign('plant_id')->references('plant_id')->on('plants');
         });
     }
 

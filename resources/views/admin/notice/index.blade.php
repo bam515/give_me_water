@@ -1,5 +1,7 @@
 @extends('admin.notice.layout')
 @section('content')
+    <style>
+    </style>
     @include('admin.include.header')
     <div id="layoutSidenav">
         @include('admin.include.side-nav')
@@ -48,12 +50,12 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th>No.</th>
-                                    <th>공지사항 제목</th>
-                                    <th>좋아요 수</th>
-                                    <th>댓글 수</th>
-                                    <th>등록일시</th>
-                                    <th>관리</th>
+                                    <th style="width: 10%;">No.</th>
+                                    <th style="width: 30%;">공지사항 제목</th>
+                                    <th style="width: 15%;">좋아요 수</th>
+                                    <th style="width: 15%;">댓글 수</th>
+                                    <th style="width: 20%;">등록일시</th>
+                                    <th style="width: 10%;">관리</th>
                                 </tr>
                                 </thead>
                                 <tbody>
