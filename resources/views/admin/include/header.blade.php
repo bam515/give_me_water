@@ -30,8 +30,8 @@
                 <h6 class="dropdown-header d-flex align-items-center">
                     <img class="dropdown-user-img" src="{{ asset('admin/img/illustrations/profiles/profile-1.png') }}" />
                     <div class="dropdown-user-details">
-                        <div class="dropdown-user-details-name">Valerie Luna</div>
-                        <div class="dropdown-user-details-email">vluna@aol.com</div>
+                        <div class="dropdown-user-details-name">{{ Auth::guard('admin')->user()->admin_name }}</div>
+                        <div class="dropdown-user-details-email">{{ Auth::guard('admin')->user()->login_id }}</div>
                     </div>
                 </h6>
                 <div class="dropdown-divider"></div>
@@ -39,7 +39,7 @@
                     <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                     Account
                 </a>
-                <a class="dropdown-item" href="#!">
+                <a class="dropdown-item" href="{{ route('admin.logout') }}">
                     <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                     Logout
                 </a>

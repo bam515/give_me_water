@@ -13,7 +13,7 @@ class AuthController extends Controller
     // login form
     public function loginForm() {
         if (Auth::guard('admin')->check()) {
-            return view('admin.dashboard.index');
+            return redirect()->route('admin.dashboard');
         }
         return view('admin.login.index');
     }
@@ -28,6 +28,15 @@ class AuthController extends Controller
         if ($admin !== null) {
             if (Hash::check($password, $admin->password)) {
                 Auth::guard('admin')->login($admin);
+
+                if ($request->filled('remember')) {
+                    setcookie('admin_login_id', $request->login_id, time() + 60 * 60 * 24 * 100);
+                    setcookie('admin_login_pass', $request->password, time() + 60 * 60 * 24 * 100);
+                } else {
+                    setcookie('admin_login_id', $request->login_id, 100);
+                    setcookie('admin_login_pass', $request->password, 100);
+                }
+
                 return redirect()->intended('/admin/dashboard');
             } else {
                 return back()->withErrors(['password' => '비밀번호가 일치하지 않습니다.']);
