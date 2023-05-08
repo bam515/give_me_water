@@ -37,9 +37,7 @@
                                                 <p class="text-gray-700 mb-0"></p>
                                             </div>
                                         </div>
-                                        <div class="col-xl-4 col-xxl-12 text-center">
-                                            {{--<img class="img-fluid" src="{{ asset('admin/img/illustrations/at-work.svg') }}" style="max-width: 26rem" />--}}
-                                        </div>
+                                        <div class="col-xl-4 col-xxl-12 text-center"></div>
                                     </div>
                                 </div>
                             </div>
@@ -235,7 +233,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between small">
-                                    <a class="text-white stretched-link" href="#!">화단 관리</a>
+                                    <a class="text-white stretched-link" href="{{ route('admin.plant.index') }}">화단 관리</a>
                                     <div class="text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -248,11 +246,10 @@
                                             <div class="text-white-75 small">공지사항 수</div>
                                             <div class="text-lg fw-bold">{{ number_format($noticeCount) }}개</div>
                                         </div>
-                                        {{--<i class="feather-xl text-white-50" data-feather="check-square"></i>--}}
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between small">
-                                    <a class="text-white stretched-link" href="#!">공지사항 관리</a>
+                                    <a class="text-white stretched-link" href="{{ route('admin.notice.index') }}">공지사항 관리</a>
                                     <div class="text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
