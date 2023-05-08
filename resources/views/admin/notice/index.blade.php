@@ -1,6 +1,14 @@
 @extends('admin.notice.layout')
 @section('content')
     <style>
+        tbody td:nth-child(2) {
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+            width: 600px;
+        }
     </style>
     @include('admin.include.header')
     <div id="layoutSidenav">
@@ -67,8 +75,8 @@
                                     <tr>
                                         <td>{{ $no-- }}</td>
                                         <td>{{ $notice->notice_title }}</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{ number_format($notice->likeCount) }}</td>
+                                        <td>{{ number_format($notice->commentCount) }}</td>
                                         <td>{{ date('Y.m.d H:i:s', strtotime($notice->created_at)) }}</td>
                                         <td>
                                             <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" onclick="location.href='{{ route('admin.notice.edit', ['notice' => $notice->notice_id]) }}'">

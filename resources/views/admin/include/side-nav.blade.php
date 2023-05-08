@@ -20,25 +20,28 @@
                     <span class="badge bg-success-soft text-success ms-auto">2 New!</span>
                 </a>
                 <!-- Sidenav Menu Heading (Core)-->
-                <div class="sidenav-menu-heading">{{--Core--}}</div>
+                <div class="sidenav-menu-heading"></div>
                 <!-- Sidenav Accordion (Dashboard)-->
                 <a class="nav-link collapsed" href="{{ route('admin.dashboard') }}">
                     <div class="nav-link-icon"><i data-feather="activity"></i></div>
                     대시보드
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                <div class="sidenav-menu-heading"></div>
                 <a class="nav-link collapsed" href="{{ route('admin.member.index') }}">
-                    <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                    <div class="nav-link-icon"><i data-feather="user"></i></div>
                     회원 관리
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                <div class="sidenav-menu-heading"></div>
                 <a class="nav-link collapsed" href="{{ route('admin.plant.index') }}">
                     <div class="nav-link-icon"><i data-feather="grid"></i></div>
                     화단 관리
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                <div class="sidenav-menu-heading"></div>
                 <a class="nav-link collapsed" href="{{ route('admin.notice.index') }}">
-                    <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                    <div class="nav-link-icon"><i data-feather="inbox"></i></div>
                     공지사항 관리
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -55,7 +58,7 @@
                 <!-- Sidenav Heading (Custom)-->
                 <div class="sidenav-menu-heading">{{--Custom--}}</div>
                 <!-- Sidenav Accordion (Pages)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                {{--<a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="nav-link-icon"><i data-feather="grid"></i></div>
                     Pages
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -308,7 +311,7 @@
                 <a class="nav-link" href="tables.html">
                     <div class="nav-link-icon"><i data-feather="filter"></i></div>
                     Tables
-                </a>
+                </a>--}}
             </div>
         </div>
         <!-- Sidenav Footer-->
