@@ -14,10 +14,10 @@ class CreateNoticeLikesTable extends Migration
     public function up()
     {
         Schema::create('notice_likes', function (Blueprint $table) {
-            $table->id('like_id');
-            $table->foreignId('user_id');
-            $table->foreignId('notice_id');
-            $table->timestamp('created_at');
+            $table->id('like_id')->comment('notice_likes.PK');
+            $table->foreignId('user_id')->comment('공지사항 좋아요 유저 ID');
+            $table->foreignId('notice_id')->comment('공지사항 ID');
+            $table->dateTime('created_at')->comment('등록일시');
 
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->foreign('notice_id')->references('notice_id')->on('notices');

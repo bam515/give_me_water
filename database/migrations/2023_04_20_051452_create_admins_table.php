@@ -14,11 +14,12 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id('admin_id');
-            $table->string('login_id', 45);
-            $table->string('password', 255);
-            $table->string('admin_name', 45);
-            $table->timestamps();
+            $table->id('admin_id')->comment('admins.PK');
+            $table->string('login_id', 45)->unique()->comment('관리자 로그인 ID');
+            $table->string('password', 255)->comment('관리자 로그인 비밀번호');
+            $table->string('admin_name', 45)->comment('관리자 이름');
+            $table->dateTime('created_at')->comment('등록일시');
+            $table->dateTime('updated_at')->nullable()->comment('수정일시');
         });
     }
 
