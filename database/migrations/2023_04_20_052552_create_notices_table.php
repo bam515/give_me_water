@@ -14,10 +14,11 @@ class CreateNoticesTable extends Migration
     public function up()
     {
         Schema::create('notices', function (Blueprint $table) {
-            $table->id('notice_id');
-            $table->string('notice_title');
-            $table->longText('notice_content');
-            $table->timestamps();
+            $table->id('notice_id')->comment('notices.PK');
+            $table->string('notice_title')->comment('공지사항 제목');
+            $table->longText('notice_content')->comment('공지사항 내용');
+            $table->dateTime('created_at')->comment('등록일시');
+            $table->dateTime('updated_at')->nullable()->comment('수정일시');
         });
     }
 
