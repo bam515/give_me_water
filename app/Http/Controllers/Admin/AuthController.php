@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     // login form
-    public function loginForm() {
+    public function loginForm()
+    {
         if (Auth::guard('admin')->check()) {
             return redirect()->route('admin.dashboard');
         }
@@ -19,9 +20,10 @@ class AuthController extends Controller
     }
 
     // login
-    public function login(Request $request) {
-        $loginID = $request->login_id;
-        $password = $request->password;
+    public function login(Request $request)
+    {
+        $loginID = $request->input('login_id');     // 로그인 ID
+        $password = $request->input('password');    // 로그인 비밀번호
 
         $admin = Admin::where('login_id', '=', $loginID)->first();
 
@@ -30,11 +32,11 @@ class AuthController extends Controller
                 Auth::guard('admin')->login($admin);
 
                 if ($request->filled('remember')) {
-                    setcookie('admin_login_id', $request->login_id, time() + 60 * 60 * 24 * 100);
-                    setcookie('admin_login_pass', $request->password, time() + 60 * 60 * 24 * 100);
+                    setcookie('admin_login_id', $loginID, time() + 60 * 60 * 24 * 100);
+                    setcookie('admin_login_pass', $password, time() + 60 * 60 * 24 * 100);
                 } else {
-                    setcookie('admin_login_id', $request->login_id, 100);
-                    setcookie('admin_login_pass', $request->password, 100);
+                    setcookie('admin_login_id', $loginID, 100);
+                    setcookie('admin_login_pass', $password, 100);
                 }
 
                 return redirect()->intended('/admin/dashboard');
@@ -47,7 +49,8 @@ class AuthController extends Controller
     }
 
     // logout
-    public function logout() {
+    public function logout()
+    {
         Auth::guard('admin')->logout();
 
         return redirect()->route('admin.login-form');
